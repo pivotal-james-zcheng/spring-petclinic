@@ -1,5 +1,5 @@
 plugins {
-  id 'org.springframework.boot' version '2.7.3'
+  id 'org.springframework.boot' version '3.2.0'
   id 'io.spring.dependency-management' version '1.0.13.RELEASE'
   id 'java'
 }
@@ -24,12 +24,14 @@ dependencies {
   implementation 'org.springframework.boot:spring-boot-starter-web'
   implementation 'org.springframework.boot:spring-boot-starter-validation'
   implementation 'javax.cache:cache-api'
+  implementation 'jakarta.xml.bind:jakarta.xml.bind-api'
+  runtimeOnly 'com.mysql:mysql-connector-j'
+  runtimeOnly 'org.glassfish.jaxb:jaxb-runtime'
   runtimeOnly 'org.springframework.boot:spring-boot-starter-actuator'
   runtimeOnly "org.webjars.npm:bootstrap:${webjarsBootstrapVersion}"
   runtimeOnly "org.webjars.npm:font-awesome:${webjarsFontawesomeVersion}"
-  runtimeOnly 'org.ehcache:ehcache'
+  runtimeOnly 'org.ehcache:ehcache::jakarta'
   runtimeOnly 'com.h2database:h2'
-  runtimeOnly 'mysql:mysql-connector-java'
   runtimeOnly 'org.postgresql:postgresql'
   developmentOnly 'org.springframework.boot:spring-boot-devtools'
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
